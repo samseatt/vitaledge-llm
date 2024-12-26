@@ -1,0 +1,19 @@
+# Core FastAPI dependencies
+fastapi
+uvicorn[standard]
+pydantic
+
+# HuggingFace Transformers for Llama model
+transformers
+bitsandbytes
+accelerate
+torch
+
+# Environment management and logging
+python-dotenv
+loguru
+
+# Explicit dependency versions to resolve conflicts
+numpy<2,>=1.22.4
+fsspec<=2024.9.0,>=2023.1.0
+

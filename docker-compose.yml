@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  vitaledge-llm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"  # Map container's port 8000 to host
+    environment:
+      - ENVIRONMENT=development
+      - OPENAI_API_KEY=your-openai-api-key-here
+    volumes:
+      - ./logs:/app/logs  # Persistent volume for logs
+      - ./data:/app/data  # Optional: Mount a directory for data files
+    restart: unless-stopped
+    depends_on:
+      - redis  # Example: if you want to add caching later
+
+  redis:  # Example caching service
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
