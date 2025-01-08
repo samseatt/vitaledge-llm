@@ -70,7 +70,7 @@ OPENAI_API_KEY=sk-your-openai-api-key
 #### Testing:
 # 
 # Run with
-uvicorn app.main:app --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8009 --reload
 # 
 # Test with:
 curl -X POST http://127.0.0.1:8009/llm/generate -H "Content-Type: application/json" -d '{"prompt": "What is diabetes?"}'
