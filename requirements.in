@@ -9,6 +9,8 @@ bitsandbytes
 accelerate
 torch
 
+openai
+
 # Environment management and logging
 python-dotenv
 loguru
